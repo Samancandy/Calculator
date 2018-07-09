@@ -1,0 +1,133 @@
+body{
+    background: rgb(134, 228, 231);
+    color: #fff;
+    font-family: sans-serif;
+}
+.calculator{
+    width: 350px;
+    height: 320px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    background: rgb(240, 158, 158);
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+input[type = "text"]{
+    width: 92%;
+    height: 40px;
+    outline: none;
+    border: 1px solid #FFF;
+    border-radius: 5px;
+    margin: none;
+    left: 4%;
+    top: 20px;
+    position: absolute;
+    padding-left: 10px;
+    background: transparent;/*
+    padding-bottom: 20px;*/
+    font-size: 20px;
+    color: #fff;
+}
+input[type = "button"]{
+    width: 20%;
+    height: 40px;
+    font-size: 20px;
+    color: #fff;
+    background: rgb(84, 224, 166);
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    position: absolute;/*
+    box-shadow: -2px 2px 2px #000;*/
+}
+input[type = "button"]:hover{
+    cursor: pointer;
+    border: 1px solid #fff;
+}
+#one{
+    left: 4%;
+    top: 70px;
+}
+#two{
+    top: 70px;
+    left: 28%;
+}
+#three{
+    top: 70px;
+    left: 52%;
+}
+#four{
+    top: 70px;
+    left: 76%;
+}
+#five{
+    top: 120px;
+    left: 4%;
+}
+#six{
+    top: 120px;
+    left: 28%;
+}
+#serven{
+    top: 120px;
+    left: 52%;
+}
+#eigh{
+    top: 120px;
+    left: 76%;
+}
+#nigh{
+    top: 170px;
+    left: 4%;
+}
+#dot{
+    top: 170px;
+    left: 28%;
+}
+#zero{
+    top: 170px;
+    left: 52%;
+}
+#zero2{
+    top: 170px;
+    left: 76%;
+}
+#multiply{
+    top: 220px;
+    left: 4%;
+    background: rgb(121, 109, 230);
+}
+#devide{
+    top: 220px;
+    left: 28%;
+    background: rgb(121, 109, 230);
+}
+
+#plus{
+    top: 220px;
+    left: 52%;
+    background: rgb(121, 109, 230);
+}
+#minus{
+    top: 220px;
+    left: 76%;
+    background: rgb(121, 109, 230);
+}
+#Reset{
+    top: 270px;
+    left: 4%;
+    background: rgb(214, 78, 78);
+}
+#clear{
+    top: 270px;
+    left: 28%;
+    background: rgb(214, 78, 78);
+}
+#equals{
+    top: 270px;
+    left: 52%;
+    width: 44%;
+    background: rgb(9, 109, 139);
+}
