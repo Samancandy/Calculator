@@ -75,7 +75,6 @@ function operator_click(ele){
     }
     if(left_val != null && right_val != null && operator_sign != null){
         left_val = calculate(operator_sign);
-        right_val = null;
         document.getElementById("screen").value = left_val;
         operator_sign = operator_sign2;
     }
@@ -87,6 +86,6 @@ function calculate(operator_sign){
         case "plus": return parseFloat(left_val) + parseFloat(right_val);
         case "minus": return parseFloat(left_val) - parseFloat(right_val);
         case "equals": return left_val;
-        default:/* window.alert("Error occuring from the operator buttons");*/
+        default: window.alert("Error occuring from the operator buttons");
     }
 }
