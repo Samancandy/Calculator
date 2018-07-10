@@ -3,17 +3,17 @@ function clearBox(){
     document.getElementById("screen").value = 0;
     left_val = null; right_val = null;
     operator = false;
-}
+};
 function deleteBox(){
     var value = document.getElementById("screen").value;
     operator = false;
     if(value.length == 1)
-        document.getElementById("screen").value = 0;
+        value = 0;
     else{
-        var v = value.substring(0, value.length - 1);
-        document.getElementById("screen").value = v;
-        left_val = v; right_val = null;
+         value = value.substring(0, value.length - 1);
     }
+    document.getElementById("screen").value = value;
+    left_val = null; right_val = null;
 }
 function numberInput(element){
     var value = document.getElementById("screen").value;
@@ -59,33 +59,42 @@ function solNum(value, num){
 var left_val = null, right_val = null;
 var operator_sign = null;
 function operator_click(ele){
-    var val = document.getElementById("screen").value,
-        operator_sign2 = null;
-    if(ele.id != "equals"){
-        operator_sign2 = ele.id;
-        operator = true;
-        left_val = null;
-    }
+    var value = document.getElementById("screen").value,
+    operator_sign2 = null;
+    operator = true;
     if(left_val == null){
-        left_val = val;
-        operator_sign = operator_sign2;
-    }
-    else{
-        right_val = val;
+        left_val = value;
+        operator_sign = ele.id;
+    }else{
+        right_val = value;
+        operator_sign2 = ele.id;
     }
     if(left_val != null && right_val != null && operator_sign != null){
-        left_val = calculate(operator_sign);
+        left_val = calculate();
         document.getElementById("screen").value = left_val;
         operator_sign = operator_sign2;
+        right_val = null;
     }
 }
-function calculate(operator_sign){
+function equals_click(){
+    if(left_val != null && operator_sign != null){
+        right_val = document.getElementById("screen").value;
+    }
+    if(left_val != null && right_val != null && operator_sign != null){
+        left_val = calculate();
+        document.getElementById("screen").value = left_val;
+        operator = false;
+        operator_sign = null;
+        left_val = null;
+        right_val = null;
+    }
+}
+function calculate(){
     switch(operator_sign){
-        case "multiply": return parseFloat(left_val) * parseFloat(right_val);
-        case "devide": return parseFloat(left_val) / parseFloat(right_val);
+        case "multiply": return left_val * right_val;
+        case "devide": return left_val / right_val;
         case "plus": return parseFloat(left_val) + parseFloat(right_val);
-        case "minus": return parseFloat(left_val) - parseFloat(right_val);
-        case "equals": return left_val;
+        case "minus": return left_val - right_val;
         default: window.alert("Error occuring from the operator buttons");
     }
 }
